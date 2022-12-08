@@ -1,0 +1,42 @@
+<center>
+<div>
+  <% val="user" %>
+  <h3> Register Here</h3>
+  <%= form_with model: @user do |form| %>
+  <div>
+    <%= form.label :user_name %><br>
+    <%= form.text_field :user_name %>
+    
+		<br></br>
+  </div>
+
+  <div>
+    <%= form.label :age %><br>
+    <%= form.number_field :age %>
+		<br></br>
+	</div>
+
+  <div>
+    <%= form.label :email %><br>
+    <%= form.text_field :email %>
+		<br></br>
+  </div>
+
+  <div>
+    <%= form.label :password %><br>
+    <%= form.password_field :password %>
+		<br></br>
+  </div>
+  
+  <div hidden>
+    <%= form.hidden_field :status, value: val %>
+		<br></br>
+  </div>
+
+  <div>
+    <%= form.submit :Register %>
+  </div>
+  <% end %>
+</div>
+<center>
+

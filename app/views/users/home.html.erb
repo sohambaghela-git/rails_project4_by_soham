@@ -1,0 +1,19 @@
+<div>
+    <h3> All User List<h3>
+    <table>
+        <tr>
+            <th>User Name</th>
+            <th>User Email</th>
+            <th>User Age</th>
+            <th>User Status</th>
+        </tr>
+        <% @users.each do |user| %>
+        <tr>
+            <td><%= user.user_name %></td>
+            <td><%= user.email %></td>
+            <td><%= user.age %></td>
+            <td><%= user.status %></td>
+        </tr>
+        <% end %>
+    </table>
+</div>
