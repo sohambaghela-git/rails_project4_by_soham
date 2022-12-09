@@ -4,6 +4,6 @@ Rails.application.routes.draw do
   post "/login", to: "users#login"
   get "/user/home", to: "users#home"
   resources :users
-  resources :products
- 
+  resources :products 
+    
 end

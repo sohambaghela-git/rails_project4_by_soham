@@ -1,5 +1,5 @@
 class Product < ApplicationRecord
-  has_many :users
+  has_many :feedbacks
   
 	validates :name, presence: true
   validates :feature, presence: true
