@@ -3,17 +3,23 @@ class UsersController < ApplicationController
   def index
     
   end
-  def login 
+  def login   
+    #@login=User.login
+  end
+  def login_check 
     # Login Page
-     @user=User.find_by(params[:email])    
-    if @user.match(user_params)
-      redirect_to "/home"
+    @login=User.login(login_params)
+    if User.find_by(email: @login.email)
+      redirect_to "/"
     else 
       render :index, status: :unprocessable_entity 
     end
     # @user=User.all
     # @user=User.find_by(params[:email])    
   end
+  
+
+
   def home 
     @users=User.all
   end
@@ -48,4 +54,7 @@ class UsersController < ApplicationController
       params.require(:user).permit(:user_name, :age, :email, :password,:status )
     end
 
+    def login_params 
+      params.require(:email, :password)
+    end
 end
